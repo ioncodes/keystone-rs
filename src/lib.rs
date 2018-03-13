@@ -74,7 +74,7 @@ impl Keystone {
         else {
             let mut engine: *mut gen::ks_engine = std::ptr::null_mut();
             let err = unsafe {
-                gen::ks_open(arch, mode, &mut engine)
+                gen::ks_open(arch, mode as i32, &mut engine)
             } as gen::ks_err;
 
             if err == gen::KS_ERR_OK {
